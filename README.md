@@ -1,10 +1,14 @@
 # realtime_device_tracker_socket.io
 
-** setting up the server **
-** initializing socket.io that runs on the http server so we need http server **
-** view engine setup(ejs) **
+This project is a real-time device tracking system using **Socket.io** for bi-directional communication between the server and the client, and **EJS** as the templating engine to render dynamic HTML content.
 
-- 
+## Features
+- Real-time device tracking
+- Socket-based communication
+- EJS as the view engine
+- Easy setup and configuration
+
+ 
 ### adding the leaflet cdn for css(index.ejs)
     <!-- https://cdnjs.com/libraries/leaflet -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" integrity="sha512-h9FcoyWjHcOcmEVkxOfTLnmZFWIH0iZhZT1H2TbOq55xssQGEJHEaIm+PgoUaZbRvQTNTluNOEfb1ZRy6D3BOw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
