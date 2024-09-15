@@ -1,8 +1,8 @@
 # realtime_device_tracker_socket.io
 
-## setting up the server
-## initializing socket.io that runs on the http server so we need http server
-## view engine setup(ejs)
+** setting up the server **
+** initializing socket.io that runs on the http server so we need http server **
+** view engine setup(ejs) **
 
 - 
 ### adding the leaflet cdn for css(index.ejs)
