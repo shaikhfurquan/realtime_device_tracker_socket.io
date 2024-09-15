@@ -22,4 +22,13 @@ This project is a real-time device tracking system using **Socket.io** for bi-di
     <script src="/js/script.js"></script>
 
 
-## chek
+## Key Functionality
+- Check if the browser supports geolocation.
+- Set options for high accuracy, a 5-second timeout, and no caching.
+- use watchPosition to track the users location contineosly
+- Emit the latitude and longitude via a socket with **send-location**, Log any errors to the console
+- Initialize a mao centered at coordinates(0,0) with a zoom level using **leafLet**.
+- Add **openStreetMap** tiles to the map
+- create an empty object marker
+- When receiving location data via the socket, extract id, latitude, and longitude, and center the map on the new coordinates.
+- If a marker for the id exists, update its position, otherwise, create a new marker at the given coordinates and add it to the map. When a user disconnects, remove their marker from the map and delete it from markers
