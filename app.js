@@ -15,15 +15,20 @@ const server = http.createServer(app)
 const io = socketio(server)
 
 
-// view engine setup(ejs)
-app.set("view engine" , "ejs")
-app.set(express.static(path.join(__dirname , "public")))
+// view engine setup (ejs)
+app.set('view engine', 'ejs');
+app.use(express.static(path.join(__dirname, 'public')));
+
+
+// Listen for a connection from the client
+io.on('connection', function(socket) {
+    console.log('A new client connected');
+});
 
 app.get("/" , (req,res)=>{ 
-    // res.render("index")
-    res.send("index")
+    res.render("index")
 })
 
-app.listen(process.env.PORT , ()=>{
+server.listen(process.env.PORT , ()=>{
     console.log(`Listening on port ${process.env.PORT}`);
 })
