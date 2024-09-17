@@ -21,14 +21,24 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 // Listen for a connection from the client
-io.on('connection', function(socket) {
+io.on('connection', function (socket) {
+    // accepting the location from client
+    socket.on("send-location", function (data) {
+        // sending back to the more clients
+        io.emit("receive-location", { id: socket.id, ...data })
+        // console.log(data); //{ latitude: 18.5204303, longitude: 73.8567437 }
+    })
     console.log('A new client connected');
+    // Handle a disconnect
+    socket.on("disconnect", function () {
+        io.emit("user-disconnected", socket.id)
+    })
 });
 
-app.get("/" , (req,res)=>{ 
+app.get("/", (req, res) => {
     res.render("index")
 })
 
-server.listen(process.env.PORT , ()=>{
+server.listen(process.env.PORT, () => {
     console.log(`Listening on port ${process.env.PORT}`);
 })
