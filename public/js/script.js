@@ -36,3 +36,12 @@ socket.on("receive-location" , (data)=>{
         markers[id] = L.marker([latitude , longitude]).addTo(map)
     }
 })
+
+
+// When a user disconnects, remove their marker from the map
+socket.on("user-disconnected" , (id)=>{
+    if(markers[id]){
+        map.removeLayer(markers[id])
+        delete markers[id]
+    }
+})
