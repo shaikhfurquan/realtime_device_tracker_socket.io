@@ -2,6 +2,10 @@
 
 This project is a real-time device tracking system using **Socket.io** for bi-directional communication between the server and the client, and **EJS** as the templating engine to render dynamic HTML content.
 
+## run command
+- `npm install`
+- `node app.js`
+
 ## Features
 - Real-time device tracking
 - Socket-based communication
@@ -32,3 +36,4 @@ This project is a real-time device tracking system using **Socket.io** for bi-di
 - create an empty object marker
 - When receiving location data via the socket, extract id, latitude, and longitude, and center the map on the new coordinates.
 - If a marker for the id exists, update its position, otherwise, create a new marker at the given coordinates and add it to the map. When a user disconnects, remove their marker from the map and delete it from markers
+
